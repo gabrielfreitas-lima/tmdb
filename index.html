@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Buscador de Filmes</title>
+  </head>
+  <body>
+    <header>
+      <span>Buscador de Filmes</span>
+    </header>
+    <main>
+      <div class="search">
+        <h2>Pesquisar por filme:</h2>
+        <input
+          type="text"
+          id="search_input"
+          name="search_input"
+          placeholder="Nome do filme..."
+          value="Avengers"
+        />
+        <div class="btn">
+            <button id="btn_pesquisar" class="btn_search">Pesquisar</button>
+            <button id="btn_limpar" class="btn_search">Limpar</button>
+        </div>
+        <span class="results_title" id="results_title"
+          >Resultados<span id="search_number">:</span>
+        </span>
+        <ul class="results" id="results_save"></ul>
+      </div>
+      <div class="search">
+        <h2>Filmes Salvos</h2>
+        <ul class="results" id="results_save"></ul>
+      </div>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

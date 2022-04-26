@@ -1,0 +1,93 @@
+.search{
+    width: 70%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.search h2{
+    margin: 5px 0px 10px 0px;
+}
+
+.search input{
+    margin: 5px 0px 10px 0px;
+    border-radius: 4px;
+    padding: 8px 0px 8px 5px;
+    font-size: 16px;
+    border: none;
+}
+
+.search input::placeholder{
+    color: lightsteelblue;
+}
+
+.search input:focus{
+    background-color: rgb(147, 147, 171);
+    color: white;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn .btn_search{
+    padding: 2px;
+    width: 40%;
+    margin: 3px 3px 0 0;
+    background-color: aqua;
+    border: 2px steelblue solid;
+    color:steelblue;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.btn .btn_search:hover{
+    background-color: steelblue;
+    color: aqua;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.results_title{
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.results{
+    list-style: none;
+}
+
+.results > li{
+    height: 150px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.results > li img{
+    width: 80px;
+    height: 120px;
+    float: left;
+    margin-right: 20px;
+}
+
+.results > li span{
+    font-size: 20px;
+}
+
+.results > li p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.results > li button{
+    margin-top: 2px;
+}
