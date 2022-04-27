@@ -132,9 +132,9 @@ var tmdb = {
       paragrafo.appendChild(paragrafoText);
       li.appendChild(paragrafo);
 
-      // botão apagar
+      // botão remover
       var button = document.createElement("button");
-      button.innerHTML = "Apagar";
+      button.innerHTML = "Remover";
       button.setAttribute(
         "onclick",
         `tmdb.limparSalvos(${JSON.stringify(arraySalvos[i])});`
@@ -167,5 +167,13 @@ var tmdb = {
     tmdb.salvar();
   },
 };
+
+// faz a tecla enter precionar o botão
+searchInput.addEventListener("keypress", function(evento){
+  if(evento.key === "Enter"){
+    evento.preventDefault();
+    searchButton.click();
+  }
+})
 
 tmdb.salvar();

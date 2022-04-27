@@ -84,8 +84,8 @@ header{
 }
 
 .results > li{
-    height: 150px;
-    border-bottom: 2px solid #ccc;
+    height: 180px;
+    border-bottom: 2px solid steelblue;
     margin-bottom: 10px;
 }
 
