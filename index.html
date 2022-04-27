@@ -2,14 +2,14 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/img/diabo.png" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Buscador de Filmes</title>
+    <title>GDB | home</title>
   </head>
   <body>
     <header>
-      <span>Buscador de Filmes</span>
+      <span>Gabirus Data Base</span>
     </header>
     <main>
       <div class="search">
@@ -19,19 +19,26 @@
           id="search_input"
           name="search_input"
           placeholder="Nome do filme..."
-          value="Avengers"
         />
         <div class="btn">
-            <button id="btn_pesquisar" class="btn_search">Pesquisar</button>
-            <button id="btn_limpar" class="btn_search">Limpar</button>
+          <button
+            id="btn_pesquisar"
+            class="btn_search"
+            onclick="tmdb.pesquisar()"
+          >
+            Pesquisar
+          </button>
+          <button id="btn_limpar" class="btn_search" onclick="tmdb.limpar()">
+            Limpar
+          </button>
         </div>
-        <span class="results_title" id="results_title"
-          >Resultados<span id="search_number">:</span>
+        <span class="results_title" id="results_title" style="display: none"
+          >Resultados:<span id="search_number"></span>
         </span>
-        <ul class="results" id="results_save"></ul>
+        <ul class="results" id="results"></ul>
       </div>
       <div class="search">
-        <h2>Filmes Salvos</h2>
+        <h2>Filmes Salvos:</h2>
         <ul class="results" id="results_save"></ul>
       </div>
     </main>
