@@ -98,7 +98,7 @@ var tmdb = {
 
     if (data !== undefined && flag) {
       arraySalvos.push(data);
-    };
+    }
     flag = true;
 
     for (i = 0; i < arraySalvos.length; i++) {
@@ -118,6 +118,11 @@ var tmdb = {
       var spanText = document.createTextNode(arraySalvos[i].title);
       span.appendChild(spanText);
       li.appendChild(span);
+
+      var h6 = document.createElement("h6");
+      var h6Text = document.createTextNode(arraySalvos[i].release_date);
+      h6.appendChild(h6Text);
+      li.appendChild(h6);
 
       // Paragrafo
       var description;
@@ -169,11 +174,11 @@ var tmdb = {
 };
 
 // faz a tecla enter precionar o botão
-searchInput.addEventListener("keypress", function(evento){
-  if(evento.key === "Enter"){
+searchInput.addEventListener("keypress", function (evento) {
+  if (evento.key === "Enter") {
     evento.preventDefault();
     searchButton.click();
   }
-})
+});
 
 tmdb.salvar();
