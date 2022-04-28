@@ -1,124 +1,131 @@
-header{
-    height: 10%;
-    text-align: center;
-    font-size: 55px;
-    font-weight: 700;
-    color: transparent;
-    text-shadow: 0px 0px 5px red;
-    text-transform: uppercase;
+header {
+  height: 10%;
+  text-align: center;
+  font-size: 55px;
+  font-weight: 700;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: lightblue;
+  text-transform: uppercase;
+  color: black;
 }
 
-.search{
-    width: 75%;
-    background-color:rgb(53,54,58);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: auto;
-    padding: 20px;
-    margin-bottom: 15px;
+.search {
+  width: 75%;
+  background-color: rgb(53, 54, 58);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 8px 4px rgba(255, 255, 255, 0.419);
 }
 
-.search h2{
-    margin: 5px 0px 10px 0px;
+.search h2 {
+  margin: 5px 0px 10px 0px;
 }
 
-.search input{
-    background-color: rgb(53, 54, 58);
-    margin: 5px 0px 10px 0px;
-    border-radius: 4px;
-    padding: 8px 0px 8px 5px;
-    font-size: 16px;
-    color: white;
-    border: black 2px solid;
-    outline: none;
+.search input {
+  background-color: rgb(53, 54, 58);
+  margin: 5px 0px 10px 0px;
+  border-radius: 4px;
+  padding: 8px 0px 8px 5px;
+  font-size: 16px;
+  color: white;
+  border: black 2px solid;
+  outline: none;
 }
 
-.search input::placeholder{
-    color: rgba(211, 211, 211, 0.573);
+.search input::placeholder {
+  color: rgba(211, 211, 211, 0.573);
 }
 
-.search input:hover{
-    background-color: black;
+.search input:hover {
+  background-color: black;
 }
 
-.search input:focus{
-    background-color: black;
-    border: white 2px solid;
+.search input:focus {
+  background-color: black;
+  border: white 2px solid;
 }
 
 /*div dos botões*/
-.btn{
-    display: flex;
-    justify-content: center;
+.btn {
+  display: flex;
+  justify-content: center;
 }
 
 /*classe dos botões*/
-.btn .btn_search{
-    padding: 8px;
-    width: 20%;
-    margin: 3px 5px 0 0;
-    background-color: rgb(53,54,58);
-    border: 2px black solid;
-    color:white;
-    font-weight: 700;
-    border-radius: 6px;
+.btn .btn_search {
+  padding: 8px;
+  width: 20%;
+  margin: 3px 5px 0 0;
+  background-color: rgb(53, 54, 58);
+  border: 2px black solid;
+  color: white;
+  font-weight: 700;
+  border-radius: 6px;
 }
 
-.btn .btn_search:hover{
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    transition: 0.4s;
+.btn .btn_search:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
-.results_title{
-    margin: 10px 0px 10px 0px;
-    font-size: 18px;
-    font-weight: bold;
+.results_title {
+  margin: 10px 0px 10px 0px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.results{
-    list-style: none;
+.results {
+  list-style: none;
 }
 
-.results > li{
-    height: 180px;
-    border-bottom: 2px solid rgba(255, 0, 0, 0.608);
-    margin-bottom: 15px;
+.results > li {
+  height: 180px;
+  border-bottom: 2px solid lightgray;
+  margin-bottom: 15px;
 }
 
-.results > li img{
-    width: 80px;
-    height: 120px;
-    float: left;
-    margin-right: 20px;
+.results > li img {
+  width: 80px;
+  height: 120px;
+  float: left;
+  margin-right: 20px;
 }
 
-.results > li span{
-    font-size: 20px;
+.results > li span {
+  font-size: 20px;
 }
 
-.results > li p{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+.results > li h6 {
+  font-size: 15px;
+  padding: 5px;
 }
 
-.results > li button{
-    margin-top: 20px;
-    padding: 3px;
-    background-color: rgb(53,54,58);
-    border: 2px white solid;
-    color:white;
-    font-weight: 700;
-    border-radius: 4px;
+.results > li p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
-.results > li button:hover{
-    background-color: black;
-    cursor: pointer;
+.results > li button {
+  margin-top: 20px;
+  padding: 3px;
+  background-color: rgb(53, 54, 58);
+  border: 2px white solid;
+  color: white;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.results > li button:hover {
+  background-color: black;
+  cursor: pointer;
 }

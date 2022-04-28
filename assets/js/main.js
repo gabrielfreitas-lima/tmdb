@@ -6,11 +6,11 @@ var resultTitle = document.getElementById("results_title");
 var searchInput = document.getElementById("search_input");
 var searchButton = document.getElementById("btn_pesquisar");
 var searchNumbers = document.getElementById("search_number");
+var saveNumbers = document.getElementById("save_number");
 var clearButton = document.getElementById("btn_limpar");
 var salvar = document.getElementById("salvar");
 
 var flag = true;
-
 var response = undefined;
 
 var tmdb = {
@@ -53,9 +53,20 @@ var tmdb = {
 
             // span
             var span = document.createElement("span");
-            var spanText = document.createTextNode(response.results[i].title);
+            var spanText = document.createTextNode(
+              `${response.results[i].title} (${response.results[
+                i
+              ].release_date.split("-", 1)})`
+            );
             span.appendChild(spanText);
             li.appendChild(span);
+
+            var h6 = document.createElement("h6");
+            var h6Text = document.createTextNode(
+              `nota: ${response.results[i].vote_average}/10`
+            );
+            h6.appendChild(h6Text);
+            li.appendChild(h6);
 
             // Paragrafo
             var description;
@@ -78,7 +89,7 @@ var tmdb = {
               `tmdb.salvar(${JSON.stringify(response.results[i])});`
             );
             li.appendChild(button);
-
+            
             // não esquecer de appendar o li
             results.appendChild(li);
           } // fim do for
@@ -96,10 +107,10 @@ var tmdb = {
     // apagar o conteúdo da caixa de consulta
     searchInput.value = "";
 
-    if(data !== undefined && arraySalvos.length !== 0){
-      for(var i=0; i < arraySalvos.length; i++){
-        if(data.id === arraySalvos[i].id){
-          flag = false
+    if (data !== undefined && arraySalvos.length !== 0) {
+      for (var i = 0; i < arraySalvos.length; i++) {
+        if (data.id === arraySalvos[i].id) {
+          flag = false;
         }
       }
     }
@@ -120,13 +131,23 @@ var tmdb = {
       );
       li.appendChild(img);
 
-      // span
+      // span titulo e ano de lançamento
       var span = document.createElement("span");
-      var spanText = document.createTextNode(`${arraySalvos[i].title} (${arraySalvos[i].release_date.split("-",1)})`);
+      var spanText = document.createTextNode(
+        `${arraySalvos[i].title} (${arraySalvos[i].release_date.split("-", 1)})`
+      );
       span.appendChild(spanText);
       li.appendChild(span);
 
-      // Paragrafo
+      // h6 nota
+      var h6 = document.createElement("h6");
+      var h6Text = document.createTextNode(
+        `nota: ${arraySalvos[i].vote_average}/10`
+      );
+      h6.appendChild(h6Text);
+      li.appendChild(h6);
+
+      // Paragrafo sinopse
       var description;
       if (arraySalvos[i].overview == "") {
         description = "Sem descrição...";
@@ -152,6 +173,7 @@ var tmdb = {
       resultsSalvos.append(li);
     } // fim do for
     localStorage.setItem("salvos", JSON.stringify(arraySalvos));
+    saveNumbers.innerText = `(${arraySalvos.length})`
   },
 
   limpar: function () {

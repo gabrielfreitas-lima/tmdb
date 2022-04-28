@@ -9,11 +9,15 @@
   </head>
   <body>
     <header>
-      <span>Gabirus Data Base</span>
+      <div>
+        <span id="titulo_site">Gabirus Data Base</span>
+      </div>
     </header>
     <main>
       <div class="search">
         <h2>Pesquisar por filme:</h2>
+        <div id="div_ti" style="height: 2px; width: 100%;">   
+        </div>
         <input
           type="text"
           id="search_input"
@@ -38,10 +42,11 @@
         <ul class="results" id="results"></ul>
       </div>
       <div class="search">
-        <h2>Filmes Salvos:</h2>
+        <h2>Filmes Salvos:<span id="save_number"></span></h2>
         <ul class="results" id="results_save"></ul>
       </div>
     </main>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/mover_titulo.js"></script>
   </body>
 </html>
