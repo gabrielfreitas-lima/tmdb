@@ -96,6 +96,13 @@ var tmdb = {
     // apagar o conteúdo da caixa de consulta
     searchInput.value = "";
 
+    if(data !== undefined && arraySalvos.length !== 0){
+      for(var i=0; i < arraySalvos.length; i++){
+        if(data.id === arraySalvos[i].id){
+          flag = false
+        }
+      }
+    }
     if (data !== undefined && flag) {
       arraySalvos.push(data);
     }
@@ -115,14 +122,9 @@ var tmdb = {
 
       // span
       var span = document.createElement("span");
-      var spanText = document.createTextNode(arraySalvos[i].title);
+      var spanText = document.createTextNode(`${arraySalvos[i].title} (${arraySalvos[i].release_date.split("-",1)})`);
       span.appendChild(spanText);
       li.appendChild(span);
-
-      var h6 = document.createElement("h6");
-      var h6Text = document.createTextNode(arraySalvos[i].release_date);
-      h6.appendChild(h6Text);
-      li.appendChild(h6);
 
       // Paragrafo
       var description;
